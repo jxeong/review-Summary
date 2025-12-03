@@ -1,38 +1,74 @@
-.App {
-  text-align: center;
-}
+@import url('https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* 전체 레이아웃 */
+body {
+  background: #fafafa;
+  font-family: "Pretendard", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+/* 제목 */
+.title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* 입력 텍스트 영역 */
+.input-area {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* 버튼 */
+.summarize-btn {
+  width: 100%;
+  padding: 14px;
+  background: #007bff;
   color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+.summarize-btn:hover {
+  background: #0066d6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.summarize-btn:disabled {
+  background: #9bbce8;
+  cursor: not-allowed;
+}
+
+/* 요약 결과 영역 */
+.result-box {
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.result-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.result-text {
+  font-size: 17px;
+  line-height: 1.6;
 }
