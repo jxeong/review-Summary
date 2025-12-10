@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./App.css";
 
 function App() {
@@ -53,6 +54,15 @@ function App() {
           <p className="result-text">{summary}</p>
         </div>
       )}
+
+      {/* 링크 */}
+      <div style={{ marginTop: "30px", textAlign: "center" }}>
+        <Link to="/terms" style={{ marginRight: "10px" }}>
+          Terms of Service
+        </Link>
+        <Link to="/privacy">Privacy Policy</Link>
+      </div>
+      
     </div>
   );
 }
