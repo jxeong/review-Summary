@@ -22,7 +22,6 @@ function App() {
         "https://jxeong-reviewsummary-t5.hf.space/summarize",
         { text: inputText }
       );
-
       setSummary(res.data.summary);
     } catch (err) {
       console.error(err);
@@ -32,9 +31,34 @@ function App() {
     setLoading(false);
   };
 
+  // TikTok Login 버튼에서 실행할 함수
+  const handleTikTokLogin = () => {
+    const sandboxURL =
+      "https://www.tiktok.com/auth/authorize/?client_key=awfdq8tcmsjsiwdo&scope=login.basic&response_type=code&redirect_uri=https://review-summary-rho.vercel.app/";
+
+    window.location.href = sandboxURL;
+  };
+
   return (
     <div className="container">
       <h1 className="title">🥗🌯🍩 음식점 리뷰 요약기 🍔🌭🍣</h1>
+
+      {/* TikTok Login 버튼 */}
+      <button
+        className="tiktok-login-btn"
+        style={{
+          marginBottom: "20px",
+          padding: "10px 20px",
+          backgroundColor: "#000",
+          color: "#fff",
+          borderRadius: "6px",
+          border: "none",
+          cursor: "pointer",
+        }}
+        onClick={handleTikTokLogin}
+      >
+        Login with TikTok
+      </button>
 
       <textarea
         className="input-area"
@@ -62,7 +86,6 @@ function App() {
         </Link>
         <Link to="/privacy">Privacy Policy</Link>
       </div>
-      
     </div>
   );
 }
