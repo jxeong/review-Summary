@@ -1,74 +1,212 @@
-@import url('https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css');
+@import url("https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css");
+
+* {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+  box-sizing: border-box;
+}
 
 /* 전체 레이아웃 */
 body {
-  background: #fafafa;
-  font-family: "Pretendard", sans-serif;
+  margin: 0;
+  min-height: 100vh;
+
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  overflow-y: auto;
 }
 
+.input-area,
+.summarize-btn,
+.result-box,
+.example-box {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* 메인 컨테이너 */
 .container {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 30px;
+  width: 100%;
+  max-width: 720px;
+  margin: 0;
+  padding: 36px;
+  box-sizing: border-box;
+
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* 제목 */
 .title {
   text-align: center;
-  margin-bottom: 25px;
-  font-weight: 500;
+  margin-bottom: 28px;
+  font-weight: 600;
+}
+
+/* ===== 예시 리뷰 박스 ===== */
+.example-box {
+  margin-bottom: 18px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.example-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.copy-btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 22px;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.copy-btn:hover {
+  transform: translateY(-1px);
+}
+
+.example-text {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #444;
 }
 
 /* 입력 텍스트 영역 */
 .input-area {
   width: 100%;
-  padding: 15px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  font-size: 16px;
+  max-height: 200px;
+  padding: 18px;
+  border-radius: 22px;
+  border: none;
+  font-size: 15px;
   resize: none;
-  margin-bottom: 20px;
-  line-height: 1.5;
+  margin-bottom: 22px;
+  line-height: 1.6;
+
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 
-/* 버튼 */
+.input-area:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px rgba(106, 133, 241, 0.4);
+}
+
+/* 요약 버튼 (유리 + 그라데이션) */
 .summarize-btn {
   width: 100%;
-  padding: 14px;
-  background: #007bff;
-  color: white;
-  font-size: 18px;
-  border-radius: 10px;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 16px;
   border: none;
   cursor: pointer;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
+
+  color: #fff;
+  background: linear-gradient(135deg, #7f8ff4, #9ad1f7);
+  transition: background 0.25s ease;
+  box-shadow: 0 12px 26px rgba(106, 133, 241, 0.35);
 }
 
 .summarize-btn:hover {
-  background: #0066d6;
+  background: linear-gradient(135deg, #6a7cf0, #7fc7f3);
 }
 
 .summarize-btn:disabled {
-  background: #9bbce8;
+  background: linear-gradient(135deg, #cfd7f8, #dbefff);
+}
+
+.summarize-btn:disabled {
+  opacity: 0.6;
   cursor: not-allowed;
 }
 
 /* 요약 결과 영역 */
 .result-box {
-  background: #f7f7f7;
-  padding: 20px;
-  border-radius: 12px;
+  width: 100%;
+  padding: 26px;
+  border-radius: 22px;
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.9),
+      rgba(245, 248, 255, 0.9));
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
 }
 
 .result-title {
-  font-size: 20px;
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 
 .result-text {
-  font-size: 17px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+}
+
+
+@media (max-width: 768px) {
+  @media (max-width: 768px) {
+    body {
+      margin: 0;
+      min-height: 100svh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    }
+
+
+    .container {
+      max-height: none;
+      width: calc(100% - 40px);
+      margin: 20px 20px;
+      border-radius: 18px;
+      padding: 20px;
+    }
+  }
+
+
+  .title {
+    font-size: 20px;
+  }
+
+  .input-area {
+    font-size: 14px;
+    padding: 14px;
+  }
+
+  .summarize-btn {
+    font-size: 15px;
+    padding: 14px;
+  }
+
+  .result-text {
+    font-size: 14px;
+  }
 }
