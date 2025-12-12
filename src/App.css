@@ -144,7 +144,7 @@ body {
 /* 요약 결과 영역 */
 .result-box {
   width: 100%;
-  padding: 26px;
+  padding: 20px;
   border-radius: 22px;
   background: linear-gradient(135deg,
       rgba(255, 255, 255, 0.9),
