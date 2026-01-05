@@ -34,7 +34,7 @@ function App() {
 
     try {
       const res = await axios.post(
-        "https://jxeong-reviewsummary-t5.hf.space/summarize",
+        "https://reviewSummary-t5-kot5Model.hf.space/summarize",
         { text: inputText }
       );
       setSummary(res.data.summary);
